@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DynamicTags\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-24 15:10+0000\n"
+"PO-Revision-Date: 2023-12-24 15:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.2"
+
+msgid "Are comments allowed"
+msgstr "Les commentaires sont-ils autorisés ?"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Cookie Name"
+msgstr "Nom du cookie"
+
+msgid "Current-Language (WPML or Polylang)"
+msgstr "Langue actuelle (WPML ou Polylang)"
+
+msgid "Current-URL"
+msgstr "URL actuelle"
+
+msgid "Current user can"
+msgstr "L'utilisateur actuel peut"
+
+msgid "Is current user author of post"
+msgstr "L'utilisateur actuel est-il l'auteur du message ?"
+
+msgid "Is feed"
+msgstr "Concerne un flux ?"
+
+msgid "Is front page"
+msgstr "Concerne la première page ?"
+
+msgid "Is home"
+msgstr "Concerne la page d'accueil ?"
+
+msgid "Is post in category"
+msgstr "Le message est-il dans la catégorie ?"
+
+msgid "Is post in list"
+msgstr "Est-ce que la publication est dans la liste ?"
+
+msgid "IDs"
+msgstr "Identifiants"
+
+msgid "Is singular"
+msgstr "Est un élément seule ?"
+
+msgid "Number posts query"
+msgstr "Requête de nombre de publications"
+
+msgid "Custom-Query"
+msgstr "Requête personnalisée"
+
+msgid "One per line, example:"
+msgstr "Un par ligne, exemple :"
+
+msgid "Server Variables"
+msgstr "Variables du serveur"
+
+msgid "Variable"
+msgstr "Variable"
+
+msgid "User/Author Image Url"
+msgstr "URL de l’image de l’utilisateur/auteur"
+
+msgid "Author or User"
+msgstr "Auteur ou utilisateur"
+
+msgid "User role"
+msgstr "Rôle d'utilisateur"
+
+msgid "Widget Content"
+msgstr "Contenu d'un widget"

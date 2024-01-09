@@ -54,7 +54,6 @@ if (function_exists('pods_api')) {
                 'id' => empty( $imageID ) ? $image_fallback['id'] : $imageID,
                 'url' => empty( $image->guid ) ? $image_fallback['url'] : $image->guid,
             ];
-            print_r($image_data);
             return $image_data;
         }
 

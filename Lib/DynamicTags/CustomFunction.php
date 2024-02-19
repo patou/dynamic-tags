@@ -26,6 +26,10 @@ class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
     public function get_title() {
         return __('Custom Callback', 'dynamic-tags');
     }
+
+    public function get_panel_template_setting_key() {
+		return 'function';
+	}
   
     protected function _register_controls() {
         $this->add_control(

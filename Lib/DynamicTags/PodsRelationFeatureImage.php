@@ -43,6 +43,10 @@ if (function_exists('pods_api')) {
             }
             
             $relation = $pod->field( $meta_key );
+            if ( empty( $relation ) ) {
+                return $image_fallback;
+            }
+            
             $imageID = get_post_thumbnail_id($relation['ID']);
             $image = get_post( $imageID );
             

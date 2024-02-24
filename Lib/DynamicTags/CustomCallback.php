@@ -6,10 +6,10 @@ use ElementorPro\Modules\DynamicTags\Module;
 use Elementor\Core\DynamicTags\Manager;
 use Elementor\Plugin;
 
-class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
+class CustomCallback extends \Elementor\Core\DynamicTags\Tag {
 
     public function get_name() {
-        return 'dynamic-tags-custom-function';
+        return 'dynamic-tags-custom-callback';
     }
   
     public function get_categories() {
@@ -28,14 +28,15 @@ class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
     }
 
     public function get_panel_template_setting_key() {
-		return 'function';
+		return 'callback';
 	}
   
     protected function _register_controls() {
         $this->add_control(
-            'function',
+            'callback',
             [
-                'label' => __( 'Function', 'dynamic-tags' ),
+                'label' => __( 'Callback', 'dynamic-tags' ),
+                'description' => __( 'A custom function to call. Must be a valid PHP callback.', 'dynamic-tags' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'ai' => [
                     'active' => false,
@@ -45,8 +46,8 @@ class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
         $this->add_control(
             'param1',
             [
-                'label' => __( 'Params', 'dynamic-tags' ) . ' 1',
-                'description' => 'A parameter 1 for the function.',
+                'label' => __( 'Params 1', 'dynamic-tags' ),
+                'description' => __( 'A parameter 1 for the function.', 'dynamic-tags' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
@@ -56,8 +57,8 @@ class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
         $this->add_control(
             'param2',
             [
-                'label' => __( 'Params', 'dynamic-tags' ) . ' 2',
-                'description' => 'A parameter 2 for the function.',
+                'label' => __( 'Params 2', 'dynamic-tags' ),
+                'description' => __( 'A parameter 2 for the function.', 'dynamic-tags' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
@@ -67,8 +68,8 @@ class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
         $this->add_control(
             'param3',
             [
-                'label' => __( 'Params', 'dynamic-tags' ) . ' 3',
-                'description' => 'A parameter 3 for the function.',
+                'label' => __( 'Params 3', 'dynamic-tags' ),
+                'description' => __( 'A parameter 3 for the function.', 'dynamic-tags' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
@@ -77,9 +78,7 @@ class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
         );
     }
     public function render() {
-        global $post;
-  
-        $function = $this->get_settings( 'function' );
+        $function = $this->get_settings( 'callback' );
         $settings = $this->get_settings();
         $param1 = $this->get_settings( 'param1' );
         $param2 = $this->get_settings( 'param2' );
@@ -103,7 +102,12 @@ class CustomFunction extends \Elementor\Core\DynamicTags\Tag {
         }
   
         if (is_callable($function)) {
-            echo wp_kses_post(call_user_func_array($function, $args));
+            $value = call_user_func_array($function, $args);
+            if (is_string($value)) {
+                echo wp_kses_post($value);
+            } else {
+                echo $value;
+            }
         }
     }
   }
